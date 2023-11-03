@@ -24,3 +24,20 @@ Promise.resolve()
 // 15
 
 /* 2 */
+
+Promise.resolve()
+    .then(data => {
+        throw new Error('Api Error');
+        return 1;
+    })
+    .then(data => console.log('ok'))
+    .catch(error => {
+        console.log(error.message);
+        return "2";
+    })
+    .then(data => {
+        console.log(data);
+    });
+
+// Api Error
+// 2
