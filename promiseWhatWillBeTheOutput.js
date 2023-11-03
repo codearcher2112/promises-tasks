@@ -23,6 +23,7 @@ Promise.resolve()
 // 13
 // 15
 
+
 /* 2 */
 
 Promise.resolve()
@@ -41,6 +42,7 @@ Promise.resolve()
 
 // Api Error
 // 2
+
 
 /* 3 */
 
@@ -66,4 +68,26 @@ console.log(6);
 // 3
 // undefined 5
 // 1
-// 2 
+// 2
+
+
+/* 4 */
+
+let a = 5;
+
+setTimeout(() => {
+    console.log(a);
+    a = 10;
+}, 0);
+
+let p = new Promise((resolve, reject) => {
+    console.log(a);
+    a = 25;
+    resolve();
+});
+
+p.then(res => {
+    console.log('final result ', res);
+});
+
+console.log(a);
