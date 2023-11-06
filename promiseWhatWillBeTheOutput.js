@@ -91,3 +91,8 @@ p.then(res => {
 });
 
 console.log(a);
+
+// 5
+// 25
+// final result undefined
+// 25
